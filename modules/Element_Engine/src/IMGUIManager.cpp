@@ -43,7 +43,7 @@ void IMGUIManager::Update()
 	// ImGui context new frame
 	ImGui::NewFrame();
 
-
+	/*
 	//Im not even going to deny it, this sucks
 	if (ImGui::Begin("Node Editor")) {
 
@@ -92,7 +92,7 @@ void IMGUIManager::Update()
 	}
 
 
-
+	*/
 	
 
 	// Make sure ImGui knows how big our window is

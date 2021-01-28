@@ -72,7 +72,7 @@ void Enemy::Update()
 		if (canBeHit)
 		{
 			
-			ECS::Get<Player>(0).SetHp(ECS::Get<Player>(0).GetPlayerData().m_HP - 1);
+			//ECS::Get<Player>(0).SetHp(ECS::Get<Player>(0).GetPlayerData().m_HP - 1);
 			canBeHit = false;
 			HitTimer = 0.f;
 			ECS::Get<Player>(0).PlayDamageSound();

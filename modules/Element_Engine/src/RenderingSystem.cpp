@@ -59,6 +59,42 @@ void RenderingSystem::Init()
 void RenderingSystem::Update()
 {
 	ECSUpdate();
+
+	//toggles for assignment
+	if (glfwGetKey(BackEnd::m_Window, GLFW_KEY_1) == GLFW_PRESS)
+	{
+		shader->SetUniform("dirLight.ambient", glm::vec3(0,0,0));
+		shader->SetUniform("dirLight.specular", glm::vec3(0, 0, 0));
+		shader->SetUniform("dirLight.diffuse", glm::vec3(0.0f, 0.0f, 0.0f));
+		AnimationShader->SetUniform("dirLight.ambient", glm::vec3(0, 0, 0));
+		AnimationShader->SetUniform("dirLight.specular", glm::vec3(0, 0, 0));
+		AnimationShader->SetUniform("dirLight.diffuse", glm::vec3(0.0f, 0.0f, 0.0f));
+	}
+	if (glfwGetKey(BackEnd::m_Window, GLFW_KEY_2) == GLFW_PRESS)
+	{
+		shader->SetUniform("dirLight.ambient", glm::vec3(0.05, 0.05, 0.05));
+		shader->SetUniform("dirLight.specular", glm::vec3(0.0, 0.0, 0.0));
+		
+		AnimationShader->SetUniform("dirLight.ambient", glm::vec3(0.05, 0.05, 0.05));
+		AnimationShader->SetUniform("dirLight.specular", glm::vec3(0, 0, 0));
+	}
+	if (glfwGetKey(BackEnd::m_Window, GLFW_KEY_3) == GLFW_PRESS)
+	{
+		shader->SetUniform("dirLight.ambient", glm::vec3(0.00, 0.00, 0.00));
+		shader->SetUniform("dirLight.specular", glm::vec3(0.5, 0.5, 0.5));
+		AnimationShader->SetUniform("dirLight.ambient", glm::vec3(0.00, 0.00, 0.00));
+		AnimationShader->SetUniform("dirLight.specular", glm::vec3(0.5, 0.5, 0.5));
+	}
+	if (glfwGetKey(BackEnd::m_Window, GLFW_KEY_4) == GLFW_PRESS)
+	{
+		shader->SetUniform("dirLight.ambient", glm::vec3(0.05, 0.05, 0.05));
+		shader->SetUniform("dirLight.specular", glm::vec3(0.5, 0.5, 0.5));
+		shader->SetUniform("dirLight.diffuse", glm::vec3(0.4f, 0.4f, 0.4f));
+		AnimationShader->SetUniform("dirLight.ambient", glm::vec3(0.00, 0.00, 0.00));
+		AnimationShader->SetUniform("dirLight.specular", glm::vec3(0.5, 0.5, 0.5));
+		AnimationShader->SetUniform("dirLight.diffuse", glm::vec3(0.4f, 0.4f, 0.4f));
+	}
+
 }
 
 float LightVal1 = 0.4;

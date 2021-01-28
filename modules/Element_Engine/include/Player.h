@@ -41,9 +41,9 @@ public:
 		m_Camera.SetFar(10);
 		m_Camera.ResizeWindow(16, 9);
 
-		Texture2DData::sptr TexData = Texture2DData::LoadFromFile("images/box.bmp");
-		m_UI.m_Texture = Texture2D::Create();
-		m_UI.m_Texture->LoadData(TexData);
+	//	Texture2DData::sptr TexData = Texture2DData::LoadFromFile("images/box.bmp");
+	//	m_UI.m_Texture = Texture2D::Create();
+	//	m_UI.m_Texture->LoadData(TexData);
 	}
 
 	void Update();
@@ -51,7 +51,7 @@ public:
 
 	void DrawUI()
 	{
-		SpriteRenderer::DrawSprite(m_UI, m_Camera.GetViewProjection());
+		//SpriteRenderer::DrawSprite(m_UI, m_Camera.GetViewProjection());
 	}
 
 	PlayerData GetPlayerData();
@@ -98,6 +98,6 @@ private:
 
 	Sprite m_UI;
 
-	Sound2D m_ShootSound = Sound2D("sounds/Ice_Sound.mp3", "group1");
-	Sound2D m_DamageSound = Sound2D("sounds/Damage.mp3", "group1");
+	//Sound2D m_ShootSound = Sound2D("sounds/Ice_Sound.mp3", "group1");
+	//Sound2D m_DamageSound = Sound2D("sounds/Damage.mp3", "group1");
 };

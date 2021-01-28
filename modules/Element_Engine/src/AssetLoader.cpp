@@ -7,7 +7,7 @@ std::vector<MorphAnimator> AssetLoader::m_AnimatedModels;
 
 void AssetLoader::Init() //doing it manually because, actually I don't know why
 {
-	
+	/*
 	Mesh pfb0;
 	pfb0.LoadOBJ("models/Straight_Nodes/StraightTrack.obj", glm::vec4(1, 1, 1, 1));
 	AssetLoader::GetMesh().push_back(pfb0);
@@ -51,17 +51,17 @@ void AssetLoader::Init() //doing it manually because, actually I don't know why
 	mat1.SetAll(1);
 	AssetLoader::GetMat().push_back(mat1);
 	AssetLoader::m_MaterialNames.push_back("FireEnemyTex");
-
+	*/
 	MorphAnimator mrph1;
-	for (int i = 1; i <= 2; i++)
+	for (int i = 1; i <= 8; i++)
 	{
 		std::string fileName = "models/animations/FIRE_ENEMY/FW_W_";
 		mrph1.LoadFrame(fileName + std::to_string(i) + ".obj", glm::vec4(1, 1, 1, 1));
 	}
-	mrph1.AddNewAnimation(0, 1, 2);
+	mrph1.AddNewAnimation(0, 7, 2);
 	mrph1.SetActiveAnimation(0);
 	m_AnimatedModels.push_back(mrph1);
-	
+
 }
 
 std::vector<Mesh>& AssetLoader::GetMesh()

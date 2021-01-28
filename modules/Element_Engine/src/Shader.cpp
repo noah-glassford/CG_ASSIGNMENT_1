@@ -64,7 +64,7 @@ bool Shader::LoadShaderPart(const char* source, GLenum type)
 }
 
 bool Shader::LoadShaderPartFromFile(const char* path, GLenum type) {
-	std::ifstream file(path);
+	std::ifstream file(path); 
 	if (!file.is_open()) {
 		LOG_ERROR("File not found: {}", path);
 		throw std::runtime_error("File not found, see logs for more information");
